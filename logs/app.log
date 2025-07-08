@@ -1,0 +1,8 @@
+2025-07-04 18:44:16 - src.config - INFO - Hugging Face token loaded from .env file.
+2025-07-04 18:44:16 - root - INFO - CUDA is available. Set default device to GPU 0.
+2025-07-04 18:44:16 - redisvl.index.index - INFO - Index already exists, not overwriting.
+2025-07-04 18:44:17 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-04 18:44:17 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-07-04 18:44:18 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-04 18:44:18 - groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+2025-07-04 18:44:34 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"

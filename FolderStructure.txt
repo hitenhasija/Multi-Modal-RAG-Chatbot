@@ -1,0 +1,12 @@
+MultiModal-RAG-Chatbot/
+├── .env                  # To store API keys securely
+├── .gitignore            # To exclude virtual environments, .env, and data
+├── README.md             # Project setup and usage instructions
+├── app.py                # The main Streamlit application file (UI and orchestration)
+├── requirements.txt      # List of all project dependencies
+└── src/
+    ├── __init__.py
+    ├── config.py         # Handles loading of API keys and configurations
+    ├── data_processing.py  # Logic for PDF parsing, chunking, and summarization
+    ├── chat_logic.py     # RAG chain, prompt templates, and conversation management
+    └── vector_store.py     # Vector store creation and retriever setup

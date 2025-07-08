@@ -1,0 +1,24 @@
+streamlit
+langchain
+langchain-openai
+langchain-groq
+langchain-community
+# Use specific versions that work together
+unstructured
+pikepdf
+pypdf
+pytesseract
+chromadb
+rank_bm25
+python-dotenv
+# Critical: These specific versions resolve the meta tensor issue
+torch
+transformers
+timm
+# Additional dependencies
+pdf2image
+Pillow
+safetensors
+
+redis
+langchain-redis
