@@ -34,7 +34,7 @@ The application is live and publicly accessible. You can test its full capabilit
 -   **PDF Parsing:** `unstructured[local-inference]` with Tesseract for OCR
 -   **AI Models:**
     -   **LLM for Generation:** Groq (Llama 3 70B)
-    -   **Vision & Summarization:** OpenAI (`gpt-4-turbo`)
+    -   **Vision & Summarization:** OpenAI (`gpt-4.1`)
     -   **Embeddings:** OpenAI (`text-embedding-3-large`)
 -   **Databases:**
     -   **Vector Store:** ChromaDB
