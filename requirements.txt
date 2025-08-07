@@ -20,6 +20,6 @@ timm
 pdf2image
 Pillow
 safetensors
-
+pi-heif
 redis
 langchain-redis
