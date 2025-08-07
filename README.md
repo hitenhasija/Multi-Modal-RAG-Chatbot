@@ -1,56 +1,73 @@
-# Multi-Modal RAG Chatbot for PDFs
+# Advanced Multi-Modal RAG Chatbot
 
-This application allows you to chat with a PDF document. It uses a sophisticated RAG pipeline that processes text, tables, and images from the PDF to provide comprehensive answers.
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://multi-modal-rag-chatbot-rtmmzvse2xr8cuznalvs3w.streamlit.app/)
 
-## Features
+This repository contains the source code for an advanced, conversational AI chatbot capable of analyzing and answering questions about complex PDF documents containing text, tables, and images.
 
-- **Multi-Modal Processing:** Extracts and understands text, tables, and images from your PDF.
-- **Hybrid Search:** Combines semantic (vector) search with keyword (BM25) search for robust document retrieval.
-- **Optional Enhanced Processing:** You can enable summarization of images and tables using OpenAI's vision models if you have a funded API key.
-- **Fast Generation:** Uses the high-speed Groq API for generating answers.
-- **Chat Interface:** An easy-to-use chat interface built with Streamlit that remembers your conversation history.
+---
 
-## Setup
+## 🚀 Live Application Demo
 
-1.  **Clone the repository:**
-    ```bash
-    git clone <repository_url>
-    cd MultiModal-RAG-Chatbot
-    ```
+The application is live and publicly accessible. You can test its full capabilities at the following link:
 
-2.  **Install System Dependencies (for `unstructured`):**
-    You may need to install Tesseract OCR.
-    - On Debian/Ubuntu: `sudo apt-get install tesseract-ocr`
-    - On macOS: `brew install tesseract`
-    - On Windows: Download from the [official Tesseract page](https://github.com/UB-Mannheim/tesseract/wiki).
+**[https://multi-modal-rag-chatbot-rtmmzvse2xr8cuznalvs3w.streamlit.app/](https://multi-modal-rag-chatbot-rtmmzvse2xr8cuznalvs3w.streamlit.app/)**
 
-3.  **Create a Python virtual environment:**
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
-    ```
+![App Screenshot](https://i.imgur.com/your-screenshot-url.png)
+*(**How to add a screenshot:** 1. Take a screenshot of your app. 2. Upload it to a service like [Imgur](https://imgur.com/upload). 3. Copy the image link and paste it here, replacing the placeholder URL.)*
 
-4.  **Install Python packages:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+---
 
-5.  **Set up API Keys:**
-    - Create a file named `.env` in the project's root directory.
-    - Add your API keys to it:
-      ```
-      OPENAI_API_KEY="your_openai_api_key"
-      GROQ_API_KEY="your_groq_api_key"
-      ```
-    - **Note:** The `OPENAI_API_KEY` is only required if you enable the "Enhanced Data Processing" option in the app. The core functionality works with just the `GROQ_API_KEY`.
+## ✨ Key Features
 
-## How to Run
+-   **🧠 Conversational Memory:** The chatbot can understand follow-up questions, pronouns, and context from the ongoing conversation, powered by a persistent Redis database backend.
+-   **📄 Multi-Modal Data Processing:** Goes beyond simple text extraction by using `unstructured.io`'s sophisticated local inference models to parse complex PDF layouts.
+-   **🖼️ Vision-Enabled Summarization:** When "Enhanced Processing" is activated, the app leverages OpenAI's `gpt-4-turbo` model to generate detailed, accurate summaries of diagrams, charts, and tables within the document.
+-   **🔍 Hybrid Search for Maximum Relevance:** Employs an `EnsembleRetriever` that combines the strengths of dense vector search (for semantic meaning) and traditional keyword search (BM25, for specific terms), ensuring the most relevant context is always found.
+-   **⚡ High-Speed, High-Quality Generation:** Utilizes the Groq API with the Llama 3 70B model to generate answers with extremely low latency.
+-   **🛡️ Robust and Grounded:** A comprehensive system prompt ensures all answers are strictly based on the document's content, preventing hallucinations and providing safe, reliable responses.
+-   **☁️ Fully Deployed:** The application is deployed on Streamlit Community Cloud, demonstrating a complete development-to-production workflow.
 
-1.  **Start the Streamlit app:**
-    ```bash
-    streamlit run app.py
-    ```
-2.  Open your web browser and go to the local URL provided by Streamlit (usually `http://localhost:8501`).
-3.  Upload a PDF file.
-4.  (Optional) Check the "Enable Enhanced Data Processing" box if you have a funded OpenAI account to get summaries of images and tables.
-5.  Wait for the processing to complete, then start asking questions!
+---
+
+## 🛠️ Tech Stack & Architecture
+
+-   **Frontend:** Streamlit
+-   **Backend & Orchestration:** LangChain
+-   **PDF Parsing:** `unstructured[local-inference]` with Tesseract for OCR
+-   **AI Models:**
+    -   **LLM for Generation:** Groq (Llama 3 70B)
+    -   **Vision & Summarization:** OpenAI (`gpt-4-turbo`)
+    -   **Embeddings:** OpenAI (`text-embedding-3-large`)
+-   **Databases:**
+    -   **Vector Store:** ChromaDB
+    -   **Chat History:** Redis
+-   **Deployment:** Streamlit Community Cloud
+
+---
+
+## 🔧 Local Setup and Installation
+
+To run this application on your local machine, follow these steps.
+
+**1. System Dependencies:**
+   - **Tesseract OCR:** Required by `unstructured`.
+     - **Windows:** Download from the [official Tesseract page](https://github.com/UB-Mannheim/tesseract/wiki).
+     - **macOS:** `brew install tesseract`
+     - **Debian/Ubuntu:** `sudo apt-get install tesseract-ocr`
+   - **Redis:** Required for chat history. The easiest way to run a local instance is with Docker.
+     ```bash
+     docker run -d --name my-redis-container -p 6379:6379 redis
+     ```
+
+**2. Clone and Set Up the Environment:**
+   ```bash
+   # Clone the repository
+   git clone https://github.com/hitenhasija/Multi-Modal-RAG-Chatbot.git
+   cd Multi-Modal-RAG-Chatbot
+
+   # Create and activate a Python virtual environment
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+   # Install all required Python packages
+   pip install -r requirements.txt
