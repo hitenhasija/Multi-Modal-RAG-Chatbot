@@ -33,7 +33,7 @@ The application is live and publicly accessible. You can test its full capabilit
 -   **Backend & Orchestration:** LangChain
 -   **PDF Parsing:** `unstructured[local-inference]` with Tesseract for OCR
 -   **AI Models:**
-    -   **LLM for Generation:** Groq (Llama 3 70B)
+    -   **LLM for Generation:** Groq (llama-3.3-70b-versatile)
     -   **Vision & Summarization:** OpenAI (`gpt-4.1`)
     -   **Embeddings:** OpenAI (`text-embedding-3-large`)
 -   **Databases:**
