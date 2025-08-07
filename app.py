@@ -30,13 +30,10 @@ try:
     if torch.cuda.is_available():
         torch.cuda.set_device(0)
         logger.info("CUDA is available. Set default device to GPU 0.")
-        st.toast("✅ NVIDIA GPU found and selected.", icon="🚀")
     else:
         logger.info("CUDA not available. Operations will run on CPU.")
-        st.toast("⚠️ NVIDIA GPU not found. Using CPU.", icon="cpu")
 except Exception as e:
     logger.error(f"Error during GPU selection: {e}")
-    st.toast(f"GPU selection error: {e}", icon="🔥")
 
 # --- Streamlit Page Configuration (NO CHANGE) ---
 st.set_page_config(page_title="Chat with your PDF", layout="wide")
