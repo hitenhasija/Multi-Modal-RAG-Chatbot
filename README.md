@@ -12,8 +12,6 @@ The application is live and publicly accessible. You can test its full capabilit
 
 **[https://multi-modal-rag-chatbot-rtmmzvse2xr8cuznalvs3w.streamlit.app/](https://multi-modal-rag-chatbot-rtmmzvse2xr8cuznalvs3w.streamlit.app/)**
 
-![App Screenshot](https://i.imgur.com/your-screenshot-url.png)
-*(**How to add a screenshot:** 1. Take a screenshot of your app. 2. Upload it to a service like [Imgur](https://imgur.com/upload). 3. Copy the image link and paste it here, replacing the placeholder URL.)*
 
 ---
 
