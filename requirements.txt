@@ -15,6 +15,7 @@ opencv-python
 chromadb
 rank_bm25
 python-dotenv
+pysqlite3-binary
 # Critical: These specific versions resolve the meta tensor issue
 torch
 transformers
