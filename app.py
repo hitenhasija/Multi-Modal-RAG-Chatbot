@@ -1,3 +1,13 @@
+import sys
+import sqlite3
+if sqlite3.sqlite_version_info < (3, 35, 0):
+    try:
+        __import__('pysqlite3')
+        sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+    except ImportError:
+        print("pysqlite3-binary is not installed. Please install it with: pip install pysqlite3-binary")
+
+
 import streamlit as st
 import os
 import tempfile
