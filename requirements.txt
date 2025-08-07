@@ -10,6 +10,7 @@ pikepdf
 pypdf
 pdfminer.six
 pytesseract
+opencv-python
 chromadb
 rank_bm25
 python-dotenv
