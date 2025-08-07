@@ -5,6 +5,7 @@ langchain-groq
 langchain-community
 # Use specific versions that work together
 unstructured
+unstructured-pytesseract
 unstructured-inference
 pikepdf
 pypdf
