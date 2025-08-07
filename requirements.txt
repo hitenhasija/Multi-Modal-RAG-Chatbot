@@ -7,6 +7,7 @@ langchain-community
 unstructured
 pikepdf
 pypdf
+pdfminer.six
 pytesseract
 chromadb
 rank_bm25
